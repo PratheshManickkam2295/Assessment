@@ -1,0 +1,62 @@
+3. Question:Write a “person” class to hold all the details.
+
+Answer:
+
+class Person {
+  constructor(name, age, city) {
+    this.name = name;
+    this.age = age;
+    this.city = city;
+  }
+
+  introduce() {
+    console.log(`Hello, my name is ${this.name}. I am ${this.age} years old and I live in ${this.city}.`);
+  }
+
+  celebrateBirthday() {
+    this.age++;
+    console.log(`Happy birthday to me! Now I am ${this.age} years old.`);
+  }
+}
+
+// Creating a person instance
+const john = new Person("John", 30, "New York");
+
+// Accessing properties
+console.log(john.name); // John
+console.log(john.age); // 30
+console.log(john.city); // New York
+
+// Calling methods
+john.introduce(); // Hello, my name is John. I am 30 years old and I live in New York.
+john.celebrateBirthday(); // Happy birthday to me! Now I am 31 years old.
+
+4.Question: Write a class to calculate the uber price.
+
+Answer:
+
+
+
+class UberPriceCalculator {
+  constructor(baseFare, costPerMinute, costPerMile) {
+    this.baseFare = baseFare;
+    this.costPerMinute = costPerMinute;
+    this.costPerMile = costPerMile;
+  }
+
+  calculatePrice(distance, duration) {
+    const price = this.baseFare + (this.costPerMinute * duration) + (this.costPerMile * distance);
+    return price;
+  }
+}
+
+// Creating an UberPriceCalculator instance
+const calculator = new UberPriceCalculator(2.5, 0.15, 1.1);
+
+// Calculating the price
+const distance = 5; // in miles
+const duration = 15; // in minutes
+const price = calculator.calculatePrice(distance, duration);
+
+console.log(`The estimated price for the ride is $${price.toFixed(2)}.`);
+
