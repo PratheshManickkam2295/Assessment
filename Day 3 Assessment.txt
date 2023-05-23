@@ -1,0 +1,39 @@
+1.Question: How to compare two JSON have the same properties without order?
+                a. let obj1 = {"name": "Person 1","age": 5};
+                b. let obj2 =  {"age": 5,"name": "Person 1"};
+
+1.Answer:
+
+function compareJSON(obj1, obj2) {
+  // Convert JSON objects to strings and sort them
+ 
+ let sortedJSON1 = JSON.stringify(obj1, Object.keys(obj1).sort());
+  let sortedJSON2 = JSON.stringify(obj2, Object.keys(obj2).sort());
+
+  // Compare the sorted strings for equality
+  return sortedJSON1 === sortedJSON2;
+}
+
+// Example usage
+let obj1 = {
+  "name": "Person 1",
+  "age": 5,
+  
+};
+
+let obj2 = {
+  "age": 5,
+  "name": "Person 1"
+};
+
+console.log(compareJSON(obj1, obj2)); // true
+
+2. Question: Use the rest countries'API URL->https://restcountries.com/v3.1/all and display all the country flags in the console
+
+   Answer:
+
+
+3.Question: Use the same rest countries and print all the countries names, regions, sub-region and populations.
+  
+  Answer:
+
